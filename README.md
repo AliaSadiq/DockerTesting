@@ -109,7 +109,7 @@ docker login
 
 ------------------------------------------------------------------------
 
-## ⬆️ 10. Push Image to Docker Hub
+## 10. Push Image to Docker Hub
 
 ``` bash
 docker push <dockerhub-username>/<app-name>:<version>
@@ -117,7 +117,7 @@ docker push <dockerhub-username>/<app-name>:<version>
 
 ------------------------------------------------------------------------
 
-## ⬇️ 11. Pull Image from Docker Hub
+## 11. Pull Image from Docker Hub
 
 ``` bash
 docker pull <dockerhub-username>/<app-name>:<version>
