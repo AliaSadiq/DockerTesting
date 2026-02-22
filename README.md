@@ -1,59 +1,126 @@
-To check the version of docker
+# 🐳 Docker Guide
 
-# docker --version
+This guide explains how to build, run, manage, and push Docker images
+and containers.
 
-To Build Image Manually
+------------------------------------------------------------------------
 
-# docker build -t <dockerhub-username>/<app-name>:version .
+## 1. Check Docker Version
 
-To check Images
+``` bash
+docker --version
+```
 
-# docker images
+------------------------------------------------------------------------
 
-To Run Container Manually (Without Compose)
+## 2. Build Docker Image Manually
 
-# docker run -p 5173:5173 <dockerhub-username>/<app-name>:version
+``` bash
+docker build -t <dockerhub-username>/<app-name>:<version> .
+```
 
-To Run container With Docker Compose (first time after changes)
+Example:
 
-# docker compose up --build
+``` bash
+docker build -t alia/myapp:v1 .
+```
 
-If no changes:
+------------------------------------------------------------------------
 
-# docker compose up
+## 3. Check Available Images
 
-To stop the container 
+``` bash
+docker images
+```
 
-# docker compose down
+------------------------------------------------------------------------
 
-or
+## 4. Run Container Manually (Without Docker Compose)
 
-# docker stop <container_id>
+``` bash
+docker run -p 5173:5173 <dockerhub-username>/<app-name>:<version>
+```
 
-To see running container
+This maps: - Local Port → 5173 - Container Port → 5173
 
-# docker ps
+------------------------------------------------------------------------
 
-To see all containers
+## 5. Run Container Using Docker Compose
 
-# docker ps -a
+### First Time (or After Code Changes)
 
-To see image
+``` bash
+docker compose up --build
+```
 
-# docker images
-   
-To remove image
+### If No Changes Were Made
 
-# docker rmi image_name
- 
-To login and push to docker hub
+``` bash
+docker compose up
+```
 
-# docker login
+------------------------------------------------------------------------
 
-To push image
+## 6. Stop Containers
 
-# docker push <dockerhub-username>/<app-name>:version
-To pull image
+### Stop Using Docker Compose
 
-# docker pull <dockerhub-username>/<app-name>:version
+``` bash
+docker compose down
+```
 
+### Stop Specific Container
+
+``` bash
+docker stop <container_id>
+```
+
+------------------------------------------------------------------------
+
+## 7. View Containers
+
+### Running Containers
+
+``` bash
+docker ps
+```
+
+### All Containers (Including Stopped)
+
+``` bash
+docker ps -a
+```
+
+------------------------------------------------------------------------
+
+## 8. Remove Docker Image
+
+``` bash
+docker rmi <image_name>
+```
+
+------------------------------------------------------------------------
+
+## 9. Login to Docker Hub
+
+``` bash
+docker login
+```
+
+------------------------------------------------------------------------
+
+## ⬆️ 10. Push Image to Docker Hub
+
+``` bash
+docker push <dockerhub-username>/<app-name>:<version>
+```
+
+------------------------------------------------------------------------
+
+## ⬇️ 11. Pull Image from Docker Hub
+
+``` bash
+docker pull <dockerhub-username>/<app-name>:<version>
+```
+
+------------------------------------------------------------------------
